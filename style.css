@@ -1,0 +1,30 @@
+.sidebar {
+    position: fixed; /* Keeps the sidebar fixed to the left side of the viewport */
+    top: 0;
+    left: 0;
+    width: 200px; /* Adjust width as needed */
+    height: 100vh; /* Full height of the viewport */
+    background: #f4f4f4; /* Background color for visibility */
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #0000FF;
+    margin-bottom: 5px;
+}
+.sidebar a:hover {
+    background: #ddd;
+}
+.content {
+    margin-left: 220px; /* Space for sidebar */
+    padding: 10px;
+    padding-right: 100px;
+}
+
+.content figure {
+    padding: 20px
+}
