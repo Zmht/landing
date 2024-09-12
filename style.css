@@ -40,7 +40,7 @@ img {
     padding: 20px
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     body {
         flex-direction: column; /* Stack sidebar and content vertically */
         min-height: auto; /* Allow body height to adjust to content */
