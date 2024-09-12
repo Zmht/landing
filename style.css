@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 0px;
-    margin: 0px
+    margin: 0px;
 }
 
 .sidebar {
@@ -10,6 +10,7 @@ body {
     background-color: #f0f0f0;
     padding: 10px;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .sidebar a {
@@ -26,6 +27,7 @@ body {
 .content {
     flex: 3 1 600px;
     padding: 10px;
+    box-sizing: border-box
 }
 
 img {
