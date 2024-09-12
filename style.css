@@ -44,6 +44,8 @@ img {
     body {
         flex-direction: column; /* Stack sidebar and content vertically */
         min-height: auto; /* Allow body height to adjust to content */
+        padding: 10px;
+        margin: 10px;
     }
 
     .sidebar {
