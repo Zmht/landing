@@ -55,14 +55,7 @@ img {
         height: auto; /* Let body height adjust naturally */
     }
 
-    .sidebar {
-        flex: 0 1 auto; /* Let sidebar adjust to its content */
-        height: auto; /* Ensure height is based on content */
-        padding-bottom: 20px;
-    }
-
-    .content {
-        flex: 1 1 auto;
-        height: auto; /* Ensure content adjusts to the remaining height */
+    .sidebar, .content {
+        flex: 1 1 100%;
     }
 }
