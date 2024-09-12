@@ -45,12 +45,14 @@ img {
         flex-direction: column; /* Stack sidebar and content vertically */
         min-height: auto; /* Allow body height to adjust to content */
     }
+
     .sidebar {
-        flex: 1 1 auto; /* Sidebar should only take up as much height as needed */
-        max-height: 50vh; /* Remove full height constraint */
+        flex: 1 1 auto; /* Sidebar takes as much height as needed */
+        min-height: auto; /* Remove 100vh constraint on mobile */
         height: auto; /* Let sidebar adjust naturally to its content */
-        padding-bottom: 20px; /* Add a little space at the bottom */
+        padding-bottom: 20px; /* Optional: add space below links */
     }
+
     .content {
         flex: 1 1 auto;
     }
