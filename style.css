@@ -41,7 +41,15 @@ img {
 }
 
 @media only screen and (max-width: 480px) {
-    .sidebar, .content {
-        flex: 1 1 100%;
+    body {
+        flex-direction: column; /* Stack sidebar and content */
+    }
+    .sidebar {
+        flex: 1 1 auto; /* Sidebar adjusts height to content on mobile */
+        min-height: auto; /* Remove full height on mobile */
+        height: auto; /* Let the sidebar adjust naturally */
+    }
+    .content {
+        flex: 1 1 auto;
     }
 }
