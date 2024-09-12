@@ -47,7 +47,7 @@ img {
     }
     .sidebar {
         flex: 1 1 auto; /* Sidebar should only take up as much height as needed */
-        min-height: auto; /* Remove full height constraint */
+        max-height: 50vh; /* Remove full height constraint */
         height: auto; /* Let sidebar adjust naturally to its content */
         padding-bottom: 20px; /* Add a little space at the bottom */
     }
