@@ -1,4 +1,5 @@
 body {
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
     padding: 0px;
@@ -40,12 +41,10 @@ img {
     padding: 20px
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     body {
         flex-direction: column; /* Stack sidebar and content vertically */
         min-height: auto; /* Allow body height to adjust to content */
-        padding: 10px;
-        margin: 10px;
     }
 
     .sidebar {
@@ -53,6 +52,8 @@ img {
         min-height: auto; /* Remove 100vh constraint on mobile */
         height: auto; /* Let sidebar adjust naturally to its content */
         padding-bottom: 20px; /* Optional: add space below links */
+        -webkit-flex-shrink: 1; /* Allow sidebar to shrink on mobile */
+        flex-shrink: 1;
     }
 
     .content {
