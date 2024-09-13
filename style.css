@@ -20,6 +20,17 @@ html, body {
     height: 100vh; /* Use height: 100% instead of min-height */
 }
 
+.website-article {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* A classic, readable font */
+    max-width: 700px;
+    margin: 0 auto; /* Center the article on the page */
+    padding: 20px;
+    line-height: 1.6; /* Comfortable line spacing */
+    color: #333; /* Subtle text color for readability */
+}
+
+
+
 .sidebar a {
     display: block;
     padding: 8px;
