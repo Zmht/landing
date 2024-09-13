@@ -28,6 +28,19 @@ html, body {
     text-align: justify;
 }
 
+.zachs-article figure {
+    border: 1px #cccccc solid;
+    padding: 4px;
+    margin: auto;
+}
+
+.zachs-article figcaption {
+    color: grey;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+  }
+
 .sidebar a {
     display: block;
     padding: 8px;
