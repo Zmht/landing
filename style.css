@@ -4,7 +4,7 @@ body {
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
-    height: 100%; /* Allow body to take up the full height */
+    height: 100vh; /* Allow body to take up the full height */
     box-sizing: border-box;
 }
 
@@ -17,7 +17,7 @@ html, body {
     background-color: #f0f0f0;
     padding: 10px;
     box-sizing: border-box;
-    height: 100%; /* Use height: 100% instead of min-height */
+    height: 100vh; /* Use height: 100% instead of min-height */
 }
 
 .sidebar a {
