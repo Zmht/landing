@@ -28,6 +28,15 @@ html, body {
     text-align: justify;
 }
 
+.zachs-article h1 {
+    font-size: 2.5em;
+    text-align: left;
+}
+
+.zachs-article-date-author {
+    color: rgb(54, 53, 53);
+} 
+
 .zachs-article figure {
     border: 1px #cccccc solid;
     padding: 4px;
