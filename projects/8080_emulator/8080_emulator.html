@@ -16,13 +16,153 @@
         <a href="../../favorites.html">Favorites</a>
         <a href="../../pictures.html">Pictures</a>
         <a href="../../coffee_corner.html">Coffee Corner</a>
-        <a href="../../misc.html">Miscellaneous</a>
+        <a href="../../projects.html">Projects</a>
         <a href="../../about.html">About</a>
     </div>
     <div class="content">
         <h1 style="text-align: center;">Intel 8080 Emulator</h1>
         <h2><a href="https://github.com/Zmht/8080-Emulator/tree/master">GitHub Page</a></h2>
-        <p>This is a simple python script which downloads and hashes a website every provided time interval (default interval of 30 seconds). Super simple to set up and run from your terminal as long as you have Python3 installed. I used it to monitor the University of Kansas Bookstore website for an Adobe Creative Cloud sale in 2024.</p>
+
+    <p>This is my program to emulate a Intel 8080 CPU. The Intel 8080 was created in the 1970s and sported 8-bit data sizes and up to 64 Kilobytes of memory. My emulator has a shell that you can use to provide the instruction that you want the cpu to run and then shows you the update state of the cpu. It is written in the C programming language and contains over 3000 lines of code.</p>
+    <h2 id="features-">Features:</h2>
+    <ul>
+    <li>Disassembler: You can generate a disassembled version of a compiled binary</li>
+    <li>Emulator: Emulate single instructions in a simple shell like enviornment</li>
+    </ul>
+    <h2 id="run-build-">Run &amp; Build:</h2>
+    <h3 id="linux-mac-build-instructions-">Linux/Mac Build Instructions:</h3>
+    <ul>
+    <li>Ensure you have a C compiler and the &quot;make&quot; build tool (these should be installed by default on MacOS</li>
+    <li>Download the code using git or by pasting the command <code>curl -LJO https://github.com/Zmht/8080-Emulator/archive/refs/heads/master.zip</code> into a terminal</li>
+    <li>Unzip the zip file by double clicking it in finder.</li>
+    <li>open a terminal in the new directory by right clicking on it and selecting &quot;New Terminal at Folder&quot;</li>
+    <li>run the <code>make</code> command to compile.</li>
+    </ul>
+    <h3 id="run-the-emulator-">Run the Emulator:</h3>
+    <ul>
+    <li>Type <code>./bin/zemulator</code> into the command line from the projects directory</li>
+    <li>
+        you can use the <code>inst</code> command in my program to open a shell the allows you to run a command 
+        <ul>
+            <li>type in the hexadecimal operation code for the instruction that you want run on the cpu. A list of all 255 can be found <a href="https://pastraiser.com/cpu/i8080/i8080_opcodes.html">here</a>.</li>
+            <li>the format is <code>op d1 d2</code> where <code>op</code> means the operation code and <code>d1 d2</code> are the first and second immideate values (if there are none then just put 00 00)</li>
+            <li>to exit the emulator use the ctrl-c key combination.</li>
+        </ul>
+    </li>
+    </ul>
+    <h2 id="examples-">Examples:</h2>
+    <p>Because I know the the instructions for compiling and running the program are rather complex I will provide some examples of the emulator in action right here for anyone who is interested. You will see the actual output from the program under each example and will be able to observe the changes in state of the CPU for your self.</p>
+    <h3 id="mvi-a-d1">MVI A,d1</h3>
+    <p>The MVI instruction is an assembly instruction that loads a 8-bit (one byte) value (d1) into the A register of the computer. This is an espceeially important instruction because the A register is also the 8080&#39;s accumulator and many math related instructions use it. When we look at the opcode table linked above, we can see that the hexadecimal value for MVI, A is 3e. Lets say that we want to load the hexadecimal value of 0x24. The assembley for that is <code>MVI A, 24</code>. We can enter that into my shell: <code>0e 24 00</code> remember, 24 is a hex value so in the base-10 number system it is 36.</p>
+    <pre><code><span class="hljs-attribute">INS</span>: E
+        <span class="hljs-attribute">B</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">C</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">D</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">E</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">H</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">L</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">A</span>: <span class="hljs-number">24</span> <span class="hljs-attribute">PC</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">SP</span>:<span class="hljs-number">0</span>
+        <span class="hljs-attribute">carry</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">aux</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">parity</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">sign</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">zero</span>: <span class="hljs-number">0</span>
+    </code></pre>
+    <h3 id="rlc">RLC</h3>
+    <p>The RLC instruction rotatates the data in the accumulator (thats the A register and the one we just loaded with 0x24) to the left. The binary version of 0x24 is 00100100. When that is rotated to the left, it will look like 01001000. The hex value of that is 0x48 and that is what should show up in our A register after running our instruction: <code>07 00 00</code>.</p>
+    <pre><code><span class="hljs-attribute">INS</span>: <span class="hljs-number">7</span>
+        <span class="hljs-attribute">B</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">C</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">D</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">E</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">H</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">L</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">A</span>: <span class="hljs-number">48</span> <span class="hljs-attribute">PC</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">SP</span>:<span class="hljs-number">0</span>
+        <span class="hljs-attribute">carry</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">aux</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">parity</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">sign</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">zero</span>: <span class="hljs-number">0</span>
+    </code></pre>
+    <h3 id="inr-a">INR A</h3>
+    <p>INR A is an instruction that increments the A register (also the accumulator). Right now, the A register is holding the value of 0x48 and incrementing it by one should have it hold the value of 0x49. The opcode for INR A is 3c. We can type it in: <code>3c 00 00</code>. The A register now holds 0x49!</p>
+    <pre><code><span class="hljs-attribute">INS</span>: <span class="hljs-number">3</span>C
+        <span class="hljs-attribute">B</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">C</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">D</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">E</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">H</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">L</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">A</span>: <span class="hljs-number">49</span> <span class="hljs-attribute">PC</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">SP</span>:<span class="hljs-number">0</span>
+        <span class="hljs-attribute">carry</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">aux</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">parity</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">sign</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">zero</span>: <span class="hljs-number">0</span>
+    </code></pre>
+    <h3 id="mov-b-a">MOV B,A</h3>
+    <p>The MOV A,B instruction will copy the value of the A register (now holding 0x49) to the B register. The hex opcode of MOV B,A is 0x47, so typing <code>47 00 00</code> into the shell should do the trick.</p>
+    <pre><code><span class="hljs-attribute">INS</span>: <span class="hljs-number">47</span>
+        <span class="hljs-attribute">B</span>: <span class="hljs-number">49</span>, <span class="hljs-attribute">C</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">D</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">E</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">H</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">L</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attribute">A</span>: <span class="hljs-number">49</span> <span class="hljs-attribute">PC</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">SP</span>:<span class="hljs-number">0</span>
+        <span class="hljs-attribute">carry</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">aux</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">parity</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">sign</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">zero</span>: <span class="hljs-number">0</span>
+    </code></pre>
+    <h1 id="my-notes-on-the-intel-8080-">My Notes on the Intel 8080:</h1>
+    <p>These are some notes I took about the general architecture of the Intel 8080, with information from the official Intel 8080 datasheet and programmers manual.</p>
+    <h2 id="registers-">Registers:</h2>
+    <ul>
+    <li>All registers are 8 bits wide and are where data ops happen.</li>
+    <li>Numbered and lettered: 0,1,2,3,4,5,7 and B,C,D,E,H,L,A</li>
+    <li>
+        Registers are paired for some instructions:
+        <pre><code>  <span class="hljs-attr">B</span> = B &amp; C
+    <span class="hljs-attr">D</span> = D &amp; E
+    <span class="hljs-attr">H</span> = H &amp; L
+    <span class="hljs-attr">PSW</span> = Program status word. A register <span class="hljs-literal">and</span> special byte <span class="hljs-keyword">in</span> memory
+    </code></pre>
+        <h2 id="memory-">Memory:</h2>
+    </li>
+    <li>Works with ROM, RAM, and Programable ROM</li>
+    <li>Memory can go from 0-FFFF</li>
+    </ul>
+    <h2 id="program-counter-">Program Counter:</h2>
+    <ul>
+    <li>16 bit register</li>
+    <li>contents tell the address of next instruction</li>
+    </ul>
+    <h2 id="stack-pointer-">Stack Pointer:</h2>
+    <ul>
+    <li>stack is an area of memory that the programmer sets aside</li>
+    <li>16 bit accesible register</li>
+    </ul>
+    <h2 id="memory-adressing-">Memory Adressing:</h2>
+    <ul>
+    <li>Direct Adressing is supplying the memory address that you want to address with a literal (provide location in command)</li>
+    <li>Register Pair Addresing is specifying a register pair that contains the 16 bit address. This has to be done with the H register pair with H holding the most significant byte and L the least.</li>
+    <li>
+        Stack Pointer Adressing is addressing data with the 16 bit stack pointer
+        <ul>
+            <li>Push Operation: Most significant bits are stored at location one less than the location of stack pointer, least are 2 away. Then the stack pointer is decremented by two.</li>
+            <li>Pop Operation: least significant digits loaded, most sig are loaded at adress one greater than stack pointers, SP is incremented by 2.</li>
+        </ul>
+    </li>
+    </ul>
+    <h2 id="condition-bits-">Condition Bits:</h2>
+    <ul>
+    <li>8080 has 5 condition bits</li>
+    <li>All but one can be tested in code with instructions</li>
+    <li>
+        Carry Bit:
+        <ul>
+            <li>Carry bit is affected by addition, subtraction, rotate and logical operations</li>
+        </ul>
+    </li>
+    <li>
+        Aux. Carry Bit:
+        <ul>
+            <li>not very important but ifi you must know it is set when there is a carry out of bit 3.</li>
+        </ul>
+    </li>
+    <li>
+        Sign Bit:
+        <ul>
+            <li>Set when the 7th bit is 1, 0 when it is 0</li>
+        </ul>
+    </li>
+    <li>
+        Zero Bit:
+        <ul>
+            <li>Set when the sum of a operation is 0</li>
+        </ul>
+    </li>
+    <li>
+        Parity Bit:
+        <ul>
+            <li>Set when the number of 1 bits is odd</li>
+        </ul>
+    </li>
+    </ul>
 
 
     </div>
