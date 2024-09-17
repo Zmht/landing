@@ -4,12 +4,12 @@ body {
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
-    height: 100vh; /* Allow body to take up the full height */
+    min-height: 100vh; /* Allow body to take up the full height */
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%; /* Ensure full height is set */
+    min-height: 100%; /* Ensure full height is set */
 }
 
 .sidebar {
@@ -17,7 +17,7 @@ html, body {
     background-color: #f0f0f0;
     padding: 10px;
     box-sizing: border-box;
-    height: 100vh; /* Use height: 100% instead of min-height */
+    min-height: 100vh; /* Use height: 100% instead of min-height */
 }
 
 .zachs-article {
