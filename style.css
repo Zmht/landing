@@ -46,6 +46,12 @@ html, body {
     margin: auto;
 }
 
+.zachs-article figure img {
+    display: block;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
 .zachs-article figcaption {
     color: grey;
     font-style: italic;
