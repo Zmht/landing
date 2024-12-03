@@ -5,18 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe App Day One</title>
     <link rel="stylesheet" href="../../style.css">
-    <script>
-        window.addEventListener("load", function() {
-        var iframe = document.getElementById("myIframe");
-
-        function resizeIframe() {
-            iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + "px";
-        }
-
-        // Adjust the iframe height after content is loaded
-        iframe.onload = resizeIframe;
-        });        
-    </script>
 </head>
 <body>
     <div class="sidebar">
@@ -79,10 +67,10 @@
 
             <hr>
             <p>Heres the Google Colab Code: </p>
-            <iframe src="notebook_day_one.html" id="myIframe"></iframe>
+            <iframe src="notebook_day_one.html" height="2100"></iframe>
 
             <p>If that wasn't enough, you can read my obsidian notes on the whole project. This gives a broader idea of where I want to go with this:</p>
-            <iframe id="myIframe" src="day1_obsidian.html"></iframe>
+            <iframe height="1200" src="day1_obsidian.html"></iframe>
             
 
           </article> 
