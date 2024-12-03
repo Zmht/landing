@@ -1,0 +1,38 @@
+<h2 id="overarching">Overarching</h2>
+<h4 id="theory">Theory</h4>
+<p>People who actually like cooking don&#39;t want to sift through online blogs to find recipes. Theoretically, only one recipe is needed because every dish has a &quot;true form&quot;.</p>
+<h4 id="mission">Mission</h4>
+<p>Database of the most average, true, recipes for every possible dish. </p>
+<hr>
+<h2 id="methods">Methods</h2>
+<h3 id="obtaining-recipes">Obtaining recipes</h3>
+<ul>
+<li>Web crawler which can scour the internet and finds tons of recipes<ul>
+<li>Can be programmed in either C or Python... I&#39;d like to use C if time permits for greater learning however I think that doing this in Python would be quicker</li>
+</ul>
+</li>
+<li>Once HTML files of recipes are found, they need to be parsed into ingredient lists and instructions using scraping<ul>
+<li>Finding ingredients isn&#39;t too tricky</li>
+<li>Instructions will be slightly more difficult however shouldn&#39;t be too difficult, just need to find ordered lists</li>
+<li>Possible machine learning opportunity here... would like to train a model on my MacBook (what language is optimized for apple silicon?)</li>
+</ul>
+</li>
+<li>Compile a large database or data structure of recipes <ul>
+<li>Each recipe contains a list of ingredients and an instruction set</li>
+<li>This alone would be a major accomplishment</li>
+</ul>
+</li>
+</ul>
+<h3 id="averaging-of-recipes">Averaging of recipes</h3>
+<ul>
+<li>Averaging the ingredients is easy... simply have a cutoff for which ingredients need to make it to the final recipe and then average out the amounts (normalized to the batch size of course)</li>
+<li>Once the list of ingredients is finalized can I use machine learning to create the instruction set based on a training set of the instruction sets.</li>
+</ul>
+<h3 id="other-things-to-do-recipes">Other things to do recipes</h3>
+<ul>
+<li>Create a list of 50 most used ingredients</li>
+<li>Using machine learning to make more recipes</li>
+</ul>
+<h2 id="resources">Resources:</h2>
+<p><a href="https://www.learndatasci.com/tutorials/ultimate-guide-web-scraping-w-python-requests-and-beautifulsoup/">https://www.learndatasci.com/tutorials/ultimate-guide-web-scraping-w-python-requests-and-beautifulsoup/</a></p>
+<p><a href="https://www.llama.com">https://www.llama.com</a></p>

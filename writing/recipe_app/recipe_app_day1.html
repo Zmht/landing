@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App Day One</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="../../index.html">Home</a>
+        <a href="../../articles.html">Articles</a>
+        <a href="../../favorites.html">Favorites</a>
+        <a href="../../pictures.html">Pictures</a>
+        <a href="../../coffee_corner.html">Coffee Corner</a>
+        <a href="../../projects.html">Projects</a>
+        <a href="../../about.html">About</a>
+    </div>
+    <div class="content">
+        
+        <article class="zachs-article">
+            <h1 style="font-size: 2.5rem;">Cooking Perfection (Day One)</h1>
+            <h2>Bland traditions converted mouthwatering to perfection</h2>
+            <p class="zachs-article-date-author">by Zachary Hansen Terry</p>
+            <p class="zachs-article-date-author">December 2nd, 2024</p>
+
+            <p>Thanksgiving break was just last week. I hoped it would provide a needed break from my school work and was looking forwards to quality relaxation time with my family. My goal was partially achieved, until it came to helping my parents make Thanksgiving dinner. My responsibilities were: make the mashed potatoes, and make the pumpkin pie. </p>
+
+            <p>Consider them in your mind. Chances are, if you've been exposed to the same general american traditions as the rest of us, you have a general idea of what both of these are supposed to taste like. I claim that I know exactly what both of those dishes taste like. I've tasted them many times and so I know what the average pumpkin pie tastes like; what the average mashed potato tastes like. </p>
+
+            <p>The average taste of a dish is not only the truest, most accurate representation of its flavors, but it is the best tasting example of a given dish. Those familiar with the <a href="https://en.wikipedia.org/wiki/Wisdom_of_the_crowd">concept of "the wisdom of the crowd"</a> will recognize my example.</p>
+
+            <p>Consider a jar filled with candy. </p>
+
+            <figure>
+                <img src="jar.png">
+                <figcaption>How many pieces of candy are in this jar?</figcaption>
+            </figure>
+
+            <p>Imagine 1000 people are asked how much candy is in the jar (a common exercise, you may have even participated in such an activity). Chances are, the results will have a high density very close to the actual amount of candies, suggesting that the average value will be very accurate. I'd like to apply this principle to cooking. Instead of picking one recipe and hoping that it's one of the more accurate and tasty ones, we can create an average recipe which should be reliably faithful to the dish's true taste </p>
+
+            <p>I got started by opening up a Google Colab notebook. These things allow you to write Python code in your browser and run it from runtimes supplied by Google. It's the same thing as a Jupyter notebook but not hosted locally. I chose Google Colab because: 
+                <ol>
+                    <li>My methods of obtaining recipes are of questionable legality (illegal)</li>
+                    <li>The way that the code is organized into blocks makes it easier to save variables for later use, possibly minimizing my queries</li>
+                    <li>I can export my notebooks to HTML files to share with you guys!</li>
+                </ol>
+            </p>
+
+            <p>My progress today was learning how to crawl the Allrecipes website to find recipes, downloading these recipes, and beginning to parse out ingredient lists. I mostly worked in the lasagna field, however I did some tests with ramen recipes as well! I ended up with probably a gigabyte downloaded of various recipes which leads me to my next problem: even though I don't <em>think</em> that they'll trace me back to my IP address, it is very possible that they trace me back to my Google account which is connected to the Google Colab runtimes and I would just <em>hate</em> to have my email account blocked. I might look into creating a burner Google account? Maybe I'll look for off-site server space if I decide I'm going to need a lot of data (terabytes). </p>
+
+            <p>I learned a lot today. The main takeaways were that I need to figure out how to combine identical ingredients whose authors may have listed them slightly differently. Think "ginger" and "fresh ginger" or "salt" and "pinch of salt". I generated a graph of supposedly the most common ingredients in lasagna and its inaccuracies helped me think about ways for me to clean and combine my ingredients data.  </p>
+            
+            <figure>
+                <img src="graph.png">
+                <figcaption>Supposed graph of the most common lasagna ingredients</figcaption>
+            </figure>
+            
+            <p><em>Some</em> issues with that graph (which is about 14,000 pixels long; cropped for the website):
+            <ul>
+                <li>The ingredients aren't normalized to serving size. I.e. 4 eggs for lasagna serving 8 people and 2 eggs for lasagna serving 4 people are functionally the same however currently the former counts twice as much as the latter.</li>
+                <li>Not even case sensitive</li>
+                <li>The terms "salt" and "pinch of salt" currently recorded separately; shouldn't be. </li>
+                <li>Not pictured: about 200 ingredients which have one occurrences. Outliers should be filtered out.
+            </ul>
+            </p>
+
+            <hr>
+            <p>Heres the Google Colab Code: </p>
+            <iframe src="notebook_day_one.html", width="700px", height="2080"></iframe>
+
+            <p>If that wasn't enough, you can read my obsidian notes on the whole project. This gives a broader idea of where I want to go with this:</p>
+            <iframe src="day1_obsidian.html", width="700px", height="1000"></iframe>
+            
+
+          </article> 
+    </div>
+</body>
+</html>
