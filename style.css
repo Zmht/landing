@@ -50,7 +50,6 @@ html, body {
     display: block; /* Ensure proper block-level alignment */
     margin: 0 auto; /* Center the iframe horizontally */
     border: 1px solid #cccccc; /* Consistent border styling */
-    max-width: 100%; /* Make iframe responsive */
     width: 100%; /* Ensure it adjusts to the parent container */
 }
 
