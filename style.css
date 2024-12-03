@@ -41,6 +41,7 @@ html, body {
 } 
 
 .zachs-article figure {
+    width: 100%;
     border: 1px #cccccc solid;
     padding: 4px;
 }
@@ -50,13 +51,21 @@ html, body {
     display: block; /* Ensure proper block-level alignment */
     margin: 0 auto; /* Center the iframe horizontally */
     border: 1px solid #cccccc; 
-    width: 700px; 
+    width: 100%; 
+}
+
+.zachs-article figure {
+    width: 100%; /* Make the figure take up the full width of the article */
+    margin: 0 auto; /* Center the figure horizontally */
+    box-sizing: border-box; /* Include padding and borders in the width calculation */
+    padding-bottom: 4px;
 }
 
 .zachs-article figure img {
-    display: block;
-    margin: auto;
-    padding-bottom: 10px;
+    width: 100%; /* Make the image take up the full width of the figure */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensure no inline spacing around the image */
+    margin: 0 auto; /* Center the image within the figure */
 }
 
 .zachs-article figcaption {
