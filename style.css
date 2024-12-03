@@ -50,7 +50,7 @@ html, body {
     display: block; /* Ensure proper block-level alignment */
     margin: 0 auto; /* Center the iframe horizontally */
     border: 1px solid #cccccc; 
-    width: 100%; 
+    width: 700px; 
 }
 
 .zachs-article figure img {
