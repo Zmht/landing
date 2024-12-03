@@ -114,9 +114,6 @@ img {
         top: 0;
         align-self: flex-start; /* Make sure it starts from the top */
     }
-    .zachs-article iframe {
-        width: 100%; /* Make sure iframes are responsive on small screens */
-    }
 
     body {
         align-items: flex-start; /* Align items to start */
