@@ -49,7 +49,7 @@ html, body {
 .content iframe {
     display: block; /* Ensure proper block-level alignment */
     margin: 0 auto; /* Center the iframe horizontally */
-    border: 1px solid #cccccc; /* Consistent border styling */
+    border: 1px solid #cccccc; 
     width: 100%; 
 }
 
