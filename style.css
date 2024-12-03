@@ -43,7 +43,15 @@ html, body {
 .zachs-article figure {
     border: 1px #cccccc solid;
     padding: 4px;
-    margin: auto;
+}
+
+.zachs-article iframe, 
+.content iframe {
+    display: block; /* Ensure proper block-level alignment */
+    margin: 0 auto; /* Center the iframe horizontally */
+    border: 1px solid #cccccc; /* Consistent border styling */
+    max-width: 100%; /* Make iframe responsive */
+    width: 100%; /* Ensure it adjusts to the parent container */
 }
 
 .zachs-article figure img {
@@ -71,7 +79,7 @@ html, body {
 }
 
 .content {
-    flex: 3 1 600px;
+    flex: 3 1 auto;
     padding: 10px;
     box-sizing: border-box;
     height: 100%;
@@ -83,7 +91,7 @@ img {
     margin-bottom: 20px;
 }
 
-.content figure {
+.content figure iframe {
     padding: 20px;
 }
 
@@ -105,6 +113,9 @@ img {
         position: sticky; /* Ensure it sticks when scrolling */
         top: 0;
         align-self: flex-start; /* Make sure it starts from the top */
+    }
+    .zachs-article iframe {
+        width: 100%; /* Make sure iframes are responsive on small screens */
     }
 
     body {
