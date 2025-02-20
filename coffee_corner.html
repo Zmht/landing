@@ -23,10 +23,34 @@
         100% { text-shadow: 0 0 5px #f00, 0 0 10px #f00; }
         }
 
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(80vw);
+            }
+        }
+
         .wired {
         font-weight: bold;
         color: white;
         animation: electric 0.15s infinite alternate;
+        }
+
+        .spinner-bouncer {
+            position: relative;
+            animation: 
+                rotate 3s infinite linear          
         }
 
     </style>
@@ -50,17 +74,19 @@
         <h2>Notes:</h2>
         <hr>
         <h4>The 02/20/2024 Update: Part Two</h4>
-        I have too much to share to fit into one update. You may pretend I wrote the following on the 21st or the 19th if two posts in one day seems like an egregious violation of my coffee corner power.
-        <ul>
-            <li>Coffee Corner goes <em>substandard</em>?!?!</li>
-            <li>I am officially dismounting form my high horse of dignity, taste, and exclusivity</li>
+            I have too much to share to fit into one update. You may pretend I wrote the following on the 21st or the 19th if two posts in one day seems like an egregious violation of my coffee corner power.
             <ul>
-                <li>This is probably going to continue until AMD is over $130/share, the California Costal Commission clears Sable Offshore's drilling ops, etc</li>
+                <li>Coffee Corner goes <em>substandard</em>?!?!</li>
+                <li>I am officially dismounting form my high horse of dignity, taste, and exclusivity</li>
+                <ul>
+                    <li>This is probably going to continue until AMD is over $130/share, I stop <em>needing</em> bike products, etc</li>
+                </ul>
+                <li>As a king on a budget, my tastes will have to adjust</li>
+                <li>I'm not embarrassed to tell readers what I've gotten into: McCafe! (Ok&mdash;actually I'm a little embarrassed)</li>
+                <ul>
+                    <li>That's correct! McDonald's licensed their <em>Premium</em> Medium Roast and you can buy about two pounds of this stuff for less than $15 bucks.</li>
+                </ul>
             </ul>
-            <li>As a king on a budget, my tastes will have to adjust</li>
-            <li>I'm not embarrassed to tell readers what I've gotten into: McCafe! (Ok I'm a little embarrassed)</li>
-            <li>That's right! McDonald's licensed their <em>Premium</em> Medium Roast and you can buy about two pounds of this stuff for less than $15 bucks.</li>
-        </ul>
             <div style="border: 2px dashed red;">
                 <h4>So, how exactly did you end up with two pounds of McDonald's Coffee?</h4>
                 <p>Yesterday was my third day in a row without coffee, our second snow day in a row here in Lawrence, KS. By the time I realized the <em>next day</em> wouldn't be a snow day, I knew I was going to need to get more coffee. I'm absolutely <em>not</em> dependent on caffeine, especially on a snow day where I can sleep until 10am. If I need to wake up at 7:00 or earlier? Yeah I'm not sure my natural wiring works that way. A few cups of coffee is probably a minimum... And I <b>strongly</b> prefer going to classes absolutely <span class="wired">wired</span> than sleepy.</p>
@@ -68,7 +94,9 @@
                 <p>Values. What makes a coffee valuable to me? If it tastes great it has intrinsic value. No matter the external factors, it will hold at least the value which is associated with it's taste. But that's not what McCafe represents. McCafe holds a different kind of value, an extrinsic value. Its value in my eyes is dependent on external factors, such as how much money I spent on bike parts in the last three months! Anyway, 2 pounds of coffee for 14 bucks??? I would be set for weeks. I snatch it off the shelf and go back to the dorm.</p>
                 <p>All of this is to say: McCafe update coming soon!</p>
             </div>
-
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img class="spinner-bouncer" style="width:20vw; height:auto;" src="img/mccafe.png" />
+            </div>
    
         <hr>
         <H4><span style="background-color: blue;">ZACH IS BACK FROM COFFEE CORNER SABBATICAL!! The 02/20/2025 update</span></H4>
